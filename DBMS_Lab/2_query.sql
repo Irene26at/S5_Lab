@@ -1,5 +1,5 @@
 
--- Change According to your Database columns --
+-- Change According to your Database columns and Questions --
 
 
 

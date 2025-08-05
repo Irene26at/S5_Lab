@@ -36,6 +36,8 @@ SELECT * FROM EMPLOYEE_CSB30 WHERE DATEOFJOIN BETWEEN TO_DATE('01-07-16', 'DD-MM
 SELECT DESIGNATION FROM EMPLOYEE_CSB30;
 
 -- 9. List the employees who are not assigned to any project --
+-- ADDING : INSERT INTO EMPLOYEE_CSB30 VALUES ('E6', 'ASIYA', NULL, 'F', NULL, NULL, NULL, NULL, NULL); --
+
 
 SELECT * FROM EMPLOYEE_CSB30 WHERE PNO IS NULL;
 
@@ -48,25 +50,23 @@ SELECT ENAME FROM EMPLOYEE_CSB30 WHERE ENAME LIKE 'S%' OR ENAME LIKE '%S';
 SELECT ENAME FROM EMPLOYEE_CSB30 WHERE ENAME LIKE '_A%';
 
 -- 12. List the employee whose name begin & end with ‘A’ & has at least 3 characters --
--- ADDING : INSERT INTO EMPLOYEE_CSB30 VALUES ('E6', 'ASIYA', NULL, 'F', NULL, NULL, NULL, NULL, NULL);
---             UPDATE EMPLOYEE_CSB30 SET SALARY=25000 WHERE ENAME='ASIYA'; --
-
 
 SELECT ENAME FROM EMPLOYEE_CSB30 WHERE ENAME LIKE 'A%A' AND LENGTH(ENAME) >= 3;
 
--- 13. List the employee whose salary in the range of (50000 - 200000) --
+-- 13. List the employee whose salary in the range of (100000 - 255000) --
+--     UPDATE EMPLOYEE_CSB30 SET SALARY=250000 WHERE ENAME='ASIYA'; --
 
-SELECT ENAME FROM EMPLOYEE_CSB30 WHERE SALARY BETWEEN 50000 AND 200000;
+SELECT ENAME FROM EMPLOYEE_CSB30 WHERE SALARY BETWEEN 100000 AND 255000;
 
 -- 14. Remove the details of employee whose age is greater than 60 --
--- UPDATING: UPDATE EMPLOYEE_CSB30 SET AGE=65 WHERE ENAME='ASIYA'; --
+--     UPDATING: UPDATE EMPLOYEE_CSB30 SET AGE=65 WHERE ENAME='ASIYA'; --
 
 DELETE FROM EMPLOYEE_CSB30 WHERE AGE > 60;
 
 
--- 15. Provide 20% increment in salary for all employees whose salary is in the range of 50000 & 200000 --
+-- 15. Provide 20% increment in salary for all employees whose salary is in the range of 100000 & 250000 --
 
-UPDATE EMPLOYEE_CSB30 SET SALARY = SALARY * 1.20 WHERE SALARY BETWEEN 50000 AND 200000;
+UPDATE EMPLOYEE_CSB30 SET SALARY = SALARY * 1.20 WHERE SALARY BETWEEN 100000 AND 250000;
 
 -- 16. List the detail of employee whose name contains ‘H’ as the second character --
 

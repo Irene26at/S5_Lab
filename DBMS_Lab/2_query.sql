@@ -7,7 +7,7 @@
 
 SELECT ENAME FROM EMPLOYEE_CSB30;
 
--- 2. List the name of employees who are working as ‘Analyst’ & ‘Salesman’
+-- 2. List the name of employees who are working as ‘MANAGER’ & ‘ACCOUNTANT’
 
 SELECT ENAME FROM EMPLOYEE_CSB30 WHERE DESIGNATION IN ('MANAGER', 'ACCOUNTANT');
 
@@ -39,7 +39,7 @@ SELECT DESIGNATION FROM EMPLOYEE_CSB30;
 
 SELECT * FROM EMPLOYEE_CSB30 WHERE PNO IS NULL;
 
--- 10. List the name of employees whose name either start or end with ‘A’ --
+-- 10. List the name of employees whose name either start or end with ‘S’ --
 
 SELECT ENAME FROM EMPLOYEE_CSB30 WHERE ENAME LIKE 'S%' OR ENAME LIKE '%S';
 

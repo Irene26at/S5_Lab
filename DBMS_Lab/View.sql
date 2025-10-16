@@ -1,0 +1,16 @@
+
+CREATE VIEW Emp_Age_20_30 AS
+SELECT *
+FROM EMPLOYEE
+WHERE AGE BETWEEN 20 AND 30;
+SELECT * FROM Emp_Age_20_30;
+
+---------------------------------------
+# VIEW with JOIN
+---------------------------------------
+
+CREATE VIEW Emp_Details AS
+SELECT E.ENO, E.ENAME, D.DEPTNAME, E.PNO
+FROM EMPLOYEE E
+LEFT JOIN PROJECT P ON E.PNO = P.PNO
+LEFT JOIN DEPARTMENT D ON P.DEPTNO = D.DEPTNO;

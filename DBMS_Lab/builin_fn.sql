@@ -53,7 +53,7 @@ SELECT SYSDATE FROM DUAL;
 
 SELECT ADD_MONTHS(SYSDATE, -3) FROM DUAL;
 
--- 14. Display the current date in the format ‘DATE-MONTH-DAY’ --
+-- 14. Display the current date in the format ‘DATE-MONTH-YEAR’ --
 
 SELECT TO_CHAR(SYSDATE, 'DD-MM-YY') AS formatted_date FROM DUAL;
 

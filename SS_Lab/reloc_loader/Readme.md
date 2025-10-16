@@ -14,7 +14,7 @@ Locate the line that contains exactly:
 
 ```E 000000```
 
-Delete this line and save the file.
+Remove "000000" from this line and save the file.
 
 Then, re-run the program to get the exact and accurate output.
 

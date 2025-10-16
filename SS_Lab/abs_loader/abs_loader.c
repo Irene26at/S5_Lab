@@ -28,7 +28,7 @@ void main() {
                 for (i = 2, j = 0; i < 8; i++, j++)
                     straddr[j] = line[i];
                 straddr[j] = '\0';
-                straddr1 = strtol(straddr, NULL, 16);  // Assuming address is hexadecimal
+                straddr1 = atoi(straddr);
 
                 i = 12;
                 while (line[i] != '\0') {

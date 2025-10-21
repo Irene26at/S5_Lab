@@ -2,19 +2,19 @@
 
 int main() {
     int np, nb, b[10], p[10], a[10], blockNum[10];
-    int i, j, bi;
+    int i, j, wi;
 
     printf("Enter the number of blocks: ");
     scanf("%d", &nb);
 
-    printf("Enter the size of each block:\n");
+    printf("Enter the size of blocks: ");
     for(i = 0; i < nb; i++)
         scanf("%d", &b[i]);
 
     printf("Enter the number of processes: ");
     scanf("%d", &np);
 
-    printf("Enter the size of each process:\n");
+    printf("Enter the size of processes: ");
     for(i = 0; i < np; i++) {
         scanf("%d", &p[i]);
         a[i] = -1;
@@ -22,31 +22,32 @@ int main() {
     }
 
     for(i = 0; i < np; i++) {
-        bi = -1;
+        wi = -1;
         for(j = 0; j < nb; j++) {
             if(b[j] >= p[i]) {
-                if(bi == -1 || b[j] < b[bi])
-                    bi = j;
+                if(wi == -1 || b[j] > b[wi])
+                    wi = j;
             }
         }
 
-        if(bi != -1) {
-            a[i] = b[bi];
-            blockNum[i] = bi + 1;
-            b[bi] -= p[i];
+        if(wi != -1) {
+            a[i] = b[wi];
+            blockNum[i] = wi + 1;
+            b[wi] -= p[i];
         }
     }
 
-    printf("\nAfter allocation:\n");
-    printf("Process No\tProcess Size\tBlock Size\n");
+    printf("After allocation:\n");
+    printf("Process no\tProcess size\tBlock size\n");
     for(i = 0; i < np; i++) {
         if(a[i] != -1)
-            printf("%d\t\t%d\t\t%d\n", i+1, p[i], a[i]);
+            printf("%d\t\t%d\t\t%d\n", i + 1, p[i], a[i]);
         else
-            printf("%d\t\t%d\t\tNot Allocated\n", i+1, p[i]);
+            printf("%d\t\t%d\t\tCan't be allocated\n", i + 1, p[i]);
 
-        // printf("%d\t\t%d\t\tBlock %d\n", i+1, p[i], blockNum[i]);
+        // printf("%d\t\t%d\t\tBlock %d\n", i + 1, p[i], blockNum[i]);
     }
 
     return 0;
 }
+

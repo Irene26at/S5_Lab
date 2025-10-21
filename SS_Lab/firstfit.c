@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int np, nb, b[10], p[10], a[10], blockNum[10];
-    int i, j, bi;
+    int nb, np;
+    int b[10], p[10], a[10], blockNum[10];
+    int i, j;
 
-    printf("Enter the number of blocks: ");
+    printf("Enter the number of memory blocks: ");
     scanf("%d", &nb);
 
     printf("Enter the size of each block:\n");
-    for(i = 0; i < nb; i++)
+    for(i = 0; i < nb; i++) {
         scanf("%d", &b[i]);
+    }
 
     printf("Enter the number of processes: ");
     scanf("%d", &np);
@@ -22,18 +24,13 @@ int main() {
     }
 
     for(i = 0; i < np; i++) {
-        bi = -1;
         for(j = 0; j < nb; j++) {
             if(b[j] >= p[i]) {
-                if(bi == -1 || b[j] < b[bi])
-                    bi = j;
+                a[i] = b[j];
+                blockNum[i] = j + 1;
+                b[j] -= p[i];
+                break;
             }
-        }
-
-        if(bi != -1) {
-            a[i] = b[bi];
-            blockNum[i] = bi + 1;
-            b[bi] -= p[i];
         }
     }
 

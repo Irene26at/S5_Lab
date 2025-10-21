@@ -24,7 +24,7 @@ DECLARE
 BEGIN
   n := &n;
   i := 0;
-  WHILE (i < n)
+  WHILE (i <= n)
   LOOP
     DBMS_OUTPUT.PUT_LINE(i);
     i := i + 2;

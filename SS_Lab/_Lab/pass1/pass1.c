@@ -15,14 +15,14 @@ void main() {
 
 	fscanf(input,"%s\t%s\t%s", label, opcode, operand);
 	if(strcmp(opcode, "START")== 0) {
-		locctr = atoi(operand);
+		locctr = strtol(operand,NULL,16);
 		start = locctr;
 		fprintf(output, "%s\t%s\t%s\n", label, opcode, operand);
 		fscanf(input, "%s\t%s\t%s", label, opcode, operand);
 	} else start = locctr = 0;
 
 	while(strcmp(opcode, "END") != 0) {
-		fprintf(output, "%d\t", locctr);
+		fprintf(output, "%X\t", locctr);
 		if(strcmp(label, "") != 0 && strcmp(label, "**") != 0) {
 			fprintf(symtab, "%s\t%d\n", label, locctr);
 		}
@@ -51,7 +51,7 @@ void main() {
 		fprintf(output,"%s\t%s\t%s\n", label, opcode, operand);
 		fscanf(input,"%s\t%s\t%s", label, opcode, operand);
 	}
-
+	fprintf(output, "%X\t", locctr);
 	fprintf(output,"%s\t%s\t%s\n", label, opcode, operand);
 	printf("Program length is: %d", locctr - start);
 
@@ -59,5 +59,4 @@ void main() {
 	fclose(output);
 	fclose(symtab);
 	fclose(optab);
-
 }

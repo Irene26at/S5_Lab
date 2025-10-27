@@ -51,7 +51,7 @@ void main() {
 		fprintf(output,"%s\t%s\t%s\n", label, opcode, operand);
 		fscanf(input,"%s\t%s\t%s", label, opcode, operand);
 	}
-
+	fprintf(output, "%d\t", locctr);
 	fprintf(output,"%s\t%s\t%s\n", label, opcode, operand);
 	printf("Program length is: %d", locctr - start);
 
@@ -59,5 +59,4 @@ void main() {
 	fclose(output);
 	fclose(symtab);
 	fclose(optab);
-
 }

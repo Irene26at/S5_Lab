@@ -4,8 +4,8 @@
 
 void main() {
     FILE *fp;
-    int i, addr1, l, j, straddr1;
-    char name[10], line[50], name1[10], addr[10], rec[10], ch, straddr[10];
+    int i, j, straddr1;
+    char name[10], line[50], name1[10], straddr[10];
 
     printf("Enter the name of the program: ");
     scanf("%s", name);
